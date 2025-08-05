@@ -1,295 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <center>
-    <title>BJP in Tamil Nadu – Development for All</title>
-    <link rel = "icon" href = "logo.jpg.jpg">
+  <meta charset="UTF-8">
+  <title>BJP in Tamil Nadu – Development for All</title>
+  <link rel="icon" href="logo.jpg.jpg">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #FFB300; /* Deep Saffron */
+      color: #0A1C3C;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .lotus-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .lotus {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-image: url('lotus.png'); /* Use transparent lotus image */
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.6;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.5) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2) rotate(360deg);
+      }
+    }
+
+    header, section, footer {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    img {
+      display: block;
+      margin: 10px auto;
+      border-radius: 15px;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    img:hover {
+      transform: scale(1.06) rotate(1deg);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    iframe {
+      display: block;
+      margin: 0 auto 30px auto;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    hr {
+      background-color: #0A1C3C;
+      height: 4px;
+      border: none;
+      margin: 40px 0;
+      animation: growWidth 1.5s ease-in-out;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #fffef0;
+      border: 2px solid #ffa726;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .card-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .card-desc {
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .highlight-box {
+      background: #fff3e0;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: floatIn 1.5s ease-in-out;
+    }
+
+    a button {
+      background-color: #e65100;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      display: block;
+      margin: 50px auto;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    a button:hover {
+      background-color: #ff6f00;
+      transform: scale(1.07);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes growWidth {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(50px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
-<body style = "background-color:#f0d371; color:#0F2C59;"></body>
-    <h1>  BJP in Tamil Nadu – People's Progress Party 🌼</h1>
 
-    <!-- Modi Ji Section -->
-    <h2> 🧑‍💼 Narendra Modi – Prime Minister of India</h2>
-    <img src="pmjii.jpg" width="300" >
-    <p>Modi Ji has introduced several national schemes that benefit the people of Tamil Nadu, including rural water supply, healthcare, and women empowerment initiatives.</p>
+<body>
 
-    <hr style= "background-color:#212121; height: 5px; border:none;">
-    <!-- Annamalai Section -->
-    <h2>🧑‍✈️ K. Annamalai </h2>
-    <img src="_K-annamalai - Copy.webp" width="300">
-    <p>Annamalai is known for his bold voice and honest politics. He focuses on bringing BJP's vision to every corner of Tamil Nadu.</p>
-</center>
- <hr style = "background-color:#212121; height:5px; border:none;">
-<!-- Scheme Section -->
-    <h2>💧 Jal Jeevan Mission in Tamil Nadu</h2>
-    <p>🔹 The Jal Jeevan Mission aims to provide safe and adequate drinking water through individual household tap connections.</p>
-    <p>🔹 In Tamil Nadu, thousands of rural homes have benefited with piped drinking water supply under this scheme.</p>
+<!-- Lotus Background Animation -->
+<div class="lotus-bg">
+  <div class="lotus" style="left: 10%; animation-duration: 18s;"></div>
+  <div class="lotus" style="left: 30%; animation-duration: 22s;"></div>
+  <div class="lotus" style="left: 50%; animation-duration: 25s;"></div>
+  <div class="lotus" style="left: 70%; animation-duration: 20s;"></div>
+  <div class="lotus" style="left: 90%; animation-duration: 27s;"></div>
+</div>
 
-    <h2>🪷 BJP for the People</h2>
+<header>
+  <h1>BJP in Tamil Nadu – People's Progress Party 🌼</h1>
+</header>
 
+<section>
+  <h2>🧑‍💼 Narendra Modi – Prime Minister of India</h2>
+  <img src="pmjii.jpg" width="300" alt="Narendra Modi">
+  <p>
+    Modi Ji has introduced several national schemes that benefit the people of Tamil Nadu, including rural water supply, healthcare, and women empowerment initiatives.
+  </p>
+</section>
 
-    <ul>
-        <li>🏥 Ayushman Bharat: Free health insurance</li>
-        <li>🏘️ PM Awas Yojana: Housing for all</li>
-        <li>🚰 Jal Jeevan Mission: Water for every home</li>
-        <li>👩‍🎓 Beti Bachao Beti Padhao: Support for girl education</li>
-    </ul>
-    <div style="background-color :#abadbe; color: #0F2C59; padding:20px;">
-    <h2> Annamalai's Youth Outreach</h2>
-    <p> Programs are being organized for the next generation voters</p>
+<hr>
+
+<section>
+  <h2>🧑‍✈️ K. Annamalai</h2>
+  <img src="_K-annamalai - Copy.webp" width="300" alt="K Annamalai">
+  <p>
+    Annamalai is known for his bold voice and honest politics. He focuses on bringing BJP's vision to every corner of Tamil Nadu.
+  </p>
+</section>
+
+<hr>
+
+<section>
+  <h2>💧 Jal Jeevan Mission in Tamil Nadu</h2>
+  <p>
+    🔹 The Jal Jeevan Mission aims to provide safe and adequate drinking water through individual household tap connections.<br>
+    🔹 In Tamil Nadu, thousands of rural homes have benefited with piped drinking water supply under this scheme.
+  </p>
+</section>
+
+<hr>
+
+<section>
+  <h2>🪷 BJP for the People</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🏥</div>
+      <div class="card-title">Ayushman Bharat</div>
+      <div class="card-desc">Free health insurance for millions across India.</div>
     </div>
 
-    <p>🙏 People across Tamil Nadu are recognizing the real change brought by BJP leaders like Modi Ji and Annamalai.</p>
-<a href="https://www.bjp.org/membership" target="_blank">
-    <button style="
-    background-color: #9f5103;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;"> 
- </button>
-  JOIN BJP NOW🪷🧡
-</a>
-</body >
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <center>
-    <title>BJP in Tamil Nadu – Development for All</title>
-    <link rel = "icon" href = "logo.jpg.jpg">
-</head>
-<body style = "background-color:#f0d371; color:#0F2C59;"></body>
-    <h1>  BJP in Tamil Nadu – People's Progress Party 🌼</h1>
-
-    <!-- Modi Ji Section -->
-    <h2> 🧑‍💼 Narendra Modi – Prime Minister of India</h2>
-    <img src="pmjii.jpg" width="300" >
-    <p>Modi Ji has introduced several national schemes that benefit the people of Tamil Nadu, including rural water supply, healthcare, and women empowerment initiatives.</p>
-
-    <hr style= "background-color:#212121; height: 5px; border:none;">
-    <!-- Annamalai Section -->
-    <h2>🧑‍✈️ K. Annamalai </h2>
-    <img src="_K-annamalai.webp" width="300">
-    <p>Annamalai is known for his bold voice and honest politics. He focuses on bringing BJP's vision to every corner of Tamil Nadu.</p>
-</center>
- <hr style = "background-color:#212121; height:5px; border:none;">
-<!-- Scheme Section -->
-    <h2>💧 Jal Jeevan Mission in Tamil Nadu</h2>
-    <p>🔹 The Jal Jeevan Mission aims to provide safe and adequate drinking water through individual household tap connections.</p>
-    <p>🔹 In Tamil Nadu, thousands of rural homes have benefited with piped drinking water supply under this scheme.</p>
-
-    <h2>🪷 BJP for the People</h2>
-
-
-    <ul>
-        <li>🏥 Ayushman Bharat: Free health insurance</li>
-        <li>🏘️ PM Awas Yojana: Housing for all</li>
-        <li>🚰 Jal Jeevan Mission: Water for every home</li>
-        <li>👩‍🎓 Beti Bachao Beti Padhao: Support for girl education</li>
-    </ul>
-    <div style="background-color :#abadbe; color: #0F2C59; padding:20px;">
-    <h2> Annamalai's Youth Outreach</h2>
-    <p> Programs are being organized for the next generation voters</p>
+    <div class="card">
+      <div class="card-icon">🏘️</div>
+      <div class="card-title">PM Awas Yojana</div>
+      <div class="card-desc">Affordable housing for low-income families.</div>
     </div>
 
-    <p>🙏 People across Tamil Nadu are recognizing the real change brought by BJP leaders like Modi Ji and Annamalai.</p>
-<a href="https://www.bjp.org/membership" target="_blank">
-    <button style="
-    background-color: #9f5103;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;"> 
- </button>
-  JOIN BJP NOW🪷🧡
-</a>
-</body >
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <center>
-    <title>BJP in Tamil Nadu – Development for All</title>
-    <link rel = "icon" href = "logo.jpg.jpg">
-</head>
-<body style = "background-color:#f0d371; color:#0F2C59;"></body>
-    <h1>  BJP in Tamil Nadu – People's Progress Party 🌼</h1>
-
-    <!-- Modi Ji Section -->
-    <h2> 🧑‍💼 Narendra Modi – Prime Minister of India</h2>
-    <img src="pmjii.jpg" width="300" >
-    <p>Modi Ji has introduced several national schemes that benefit the people of Tamil Nadu, including rural water supply, healthcare, and women empowerment initiatives.</p>
-
-    <hr style= "background-color:#212121; height: 5px; border:none;">
-    <!-- Annamalai Section -->
-    <h2>🧑‍✈️ K. Annamalai </h2>
-    <img src="_K-annamalai.webp" width="300">
-    <p>Annamalai is known for his bold voice and honest politics. He focuses on bringing BJP's vision to every corner of Tamil Nadu.</p>
-</center>
- <hr style = "background-color:#212121; height:5px; border:none;">
-<!-- Scheme Section -->
-    <h2>💧 Jal Jeevan Mission in Tamil Nadu</h2>
-    <p>🔹 The Jal Jeevan Mission aims to provide safe and adequate drinking water through individual household tap connections.</p>
-    <p>🔹 In Tamil Nadu, thousands of rural homes have benefited with piped drinking water supply under this scheme.</p>
-
-    <h2>🪷 BJP for the People</h2>
-
-
-    <ul>
-        <li>🏥 Ayushman Bharat: Free health insurance</li>
-        <li>🏘️ PM Awas Yojana: Housing for all</li>
-        <li>🚰 Jal Jeevan Mission: Water for every home</li>
-        <li>👩‍🎓 Beti Bachao Beti Padhao: Support for girl education</li>
-    </ul>
-    <div style="background-color :#abadbe; color: #0F2C59; padding:20px;">
-    <h2> Annamalai's Youth Outreach</h2>
-    <p> Programs are being organized for the next generation voters</p>
+    <div class="card">
+      <div class="card-icon">🚰</div>
+      <div class="card-title">Jal Jeevan Mission</div>
+      <div class="card-desc">Tap water supply to every rural home.</div>
     </div>
 
-    <p>🙏 People across Tamil Nadu are recognizing the real change brought by BJP leaders like Modi Ji and Annamalai.</p>
-<a href="https://www.bjp.org/membership" target="_blank">
-    <button style="
-    background-color: #9f5103;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;"> 
- </button>
-  JOIN BJP NOW🪷🧡
-</a>
-</body >
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <center>
-    <title>BJP in Tamil Nadu – Development for All</title>
-    <link rel = "icon" href = "logo.jpg.jpg">
-</head>
-<body style = "background-color:#f0d371; color:#0F2C59;"></body>
-    <h1>  BJP in Tamil Nadu – People's Progress Party 🌼</h1>
-
-    <!-- Modi Ji Section -->
-    <h2> 🧑‍💼 Narendra Modi – Prime Minister of India</h2>
-    <img src="pmjii.jpg" width="300" >
-    <p>Modi Ji has introduced several national schemes that benefit the people of Tamil Nadu, including rural water supply, healthcare, and women empowerment initiatives.</p>
-
-    <hr style= "background-color:#212121; height: 5px; border:none;">
-    <!-- Annamalai Section -->
-    <h2>🧑‍✈️ K. Annamalai </h2>
-    <img src="_K-annamalai.webp" width="300">
-    <p>Annamalai is known for his bold voice and honest politics. He focuses on bringing BJP's vision to every corner of Tamil Nadu.</p>
-</center>
- <hr style = "background-color:#212121; height:5px; border:none;">
-<!-- Scheme Section -->
-    <h2>💧 Jal Jeevan Mission in Tamil Nadu</h2>
-    <p>🔹 The Jal Jeevan Mission aims to provide safe and adequate drinking water through individual household tap connections.</p>
-    <p>🔹 In Tamil Nadu, thousands of rural homes have benefited with piped drinking water supply under this scheme.</p>
-
-    <h2>🪷 BJP for the People</h2>
-
-
-    <ul>
-        <li>🏥 Ayushman Bharat: Free health insurance</li>
-        <li>🏘️ PM Awas Yojana: Housing for all</li>
-        <li>🚰 Jal Jeevan Mission: Water for every home</li>
-        <li>👩‍🎓 Beti Bachao Beti Padhao: Support for girl education</li>
-    </ul>
-    <div style="background-color :#abadbe; color: #0F2C59; padding:20px;">
-    <h2> Annamalai's Youth Outreach</h2>
-    <p> Programs are being organized for the next generation voters</p>
+    <div class="card">
+      <div class="card-icon">👩‍🎓</div>
+      <div class="card-title">Beti Bachao Beti Padhao</div>
+      <div class="card-desc">Education and empowerment for girl children.</div>
     </div>
+  </div>
+</section>
 
-    <p>🙏 People across Tamil Nadu are recognizing the real change brought by BJP leaders like Modi Ji and Annamalai.</p>
+<div class="highlight-box">
+  <h2>Annamalai's Youth Outreach</h2>
+  <p>Programs are being organized for the next generation voters.</p>
+</div>
+
+<section>
+  <p>🙏 People across Tamil Nadu are recognizing the real change brought by BJP leaders like Modi Ji and Annamalai.</p>
+</section>
+
+<!-- Modi Ji Inspirational Speech -->
+<section>
+  <h2>🎤 Modi Ji’s Inspirational Speech</h2>
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/OMhSvWYIXcQ"
+    title="PM Modi BRICS 2025 Speech" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
+</section>
+
+<!-- Annamalai Inspirational Speech -->
+<section>
+  <h2>🎥 K. Annamalai’s Inspiring Leadership</h2>
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/Z-HL0Vq3jbA"
+    title="Annamalai Leadership Speech" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
+</section>
+
 <a href="https://www.bjp.org/membership" target="_blank">
-    <button style="
-    background-color: #9f5103;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;"> 
- </button>
-  JOIN BJP NOW🪷🧡
+  <button>JOIN BJP NOW 🪷🧡</button>
 </a>
-</body >
+
+</body>
 </html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <center>
-    <title>BJP in Tamil Nadu – Development for All</title>
-    <link rel = "icon" href = "logo.jpg.jpg">
-</head>
-<body style = "background-color:#f0d371; color:#0F2C59;"></body>
-    <h1>  BJP in Tamil Nadu – People's Progress Party 🌼</h1>
-
-    <!-- Modi Ji Section -->
-    <h2> 🧑‍💼 Narendra Modi – Prime Minister of India</h2>
-    <img src="pmjii.jpg" width="300" >
-    <p>Modi Ji has introduced several national schemes that benefit the people of Tamil Nadu, including rural water supply, healthcare, and women empowerment initiatives.</p>
-
-    <hr style= "background-color:#212121; height: 5px; border:none;">
-    <!-- Annamalai Section -->
-    <h2>🧑‍✈️ K. Annamalai </h2>
-    <img src="_K-annamalai.webp" width="300">
-    <p>Annamalai is known for his bold voice and honest politics. He focuses on bringing BJP's vision to every corner of Tamil Nadu.</p>
-</center>
- <hr style = "background-color:#212121; height:5px; border:none;">
-<!-- Scheme Section -->
-    <h2>💧 Jal Jeevan Mission in Tamil Nadu</h2>
-    <p>🔹 The Jal Jeevan Mission aims to provide safe and adequate drinking water through individual household tap connections.</p>
-    <p>🔹 In Tamil Nadu, thousands of rural homes have benefited with piped drinking water supply under this scheme.</p>
-
-    <h2>🪷 BJP for the People</h2>
-
-
-    <ul>
-        <li>🏥 Ayushman Bharat: Free health insurance</li>
-        <li>🏘️ PM Awas Yojana: Housing for all</li>
-        <li>🚰 Jal Jeevan Mission: Water for every home</li>
-        <li>👩‍🎓 Beti Bachao Beti Padhao: Support for girl education</li>
-    </ul>
-    <div style="background-color :#abadbe; color: #0F2C59; padding:20px;">
-    <h2> Annamalai's Youth Outreach</h2>
-    <p> Programs are being organized for the next generation voters</p>
-    </div>
-
-    <p>🙏 People across Tamil Nadu are recognizing the real change brought by BJP leaders like Modi Ji and Annamalai.</p>
-<a href="https://www.bjp.org/membership" target="_blank">
-    <button style="
-    background-color: #9f5103;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;"> 
- </button>
-  JOIN BJP NOW🪷🧡
-</a>
-</body >
-</html>
-
